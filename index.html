@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<title>Лабораторная работа по теории телетрафика</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<div>
+	<h2>Расчет возникающих нагрузок всех станций ГСС</h2>
+	<div>
+		<h3>Квартирный сектор:</h3>
+		<div>
+			<p><input type="text" class="input" id="kvN" value="1400"> - число абонентов</p>
+		</div>
+		<div>
+			<p><input type="text" class="input" id="kvL" value="0.03"> - нагрузка (Эрл.)</p>
+		</div>
+
+		<h3>Народно-хозяйственный сектор (спальный район):</h3>
+		<div>
+			<p><input type="text" class="input" id="nhSN" value="2600"> - число абонентов</p>
+		</div>
+		<div>
+			<p><input type="text" class="input" id="nhSL" value="0.03"> - нагрузка (Эрл.)</p>
+		</div>
+
+		<h3>Народно-хозяйственный сектор (деловой район):</h3>
+		<div>
+			<p><input type="text" class="input" id="nhDN" value="3500"> - число абонентов</p>
+		</div>
+		<div>
+			<p><input type="text" class="input" id="nhDL" value="0.07"> - нагрузка (Эрл.)</p>
+		</div>
+
+		<h3>Специальная линия:</h3>
+		<div>
+			<p><input type="text" class="input" id="isdnN" value="2600"> - число абонентов</p>
+		</div>
+		<div>
+			<p><input type="text" class="input" id="isdnL" value="0.25"> - нагрузка (Эрл.)</p>
+		</div>
+		<hr>
+		<div>
+			<p><input type="text" class="input" id="stationN" value="8"> - число станций на сети</p>
+		</div>
+		<button id="localNetworkLoadTrigger">Рассчитать</button>
+		<div>
+			<p>
+				<span>Местная нагрузка сети: </span>
+				<span id="localNetworkLoad"></span>
+				<span> Эрл.</span>
+			</p>
+		</div>
+		<div>
+			<p>
+				<span>Увых КП: </span>
+				<span id="localNetworkLoadDev"></span>
+				<span> (при φ = 0.9)</span>
+			</p>
+		</div>
+	</div>
+	<hr>
+	<hr>
+	<h2>Расчет межстанционных нагрузок и нагрузок к УСС и к/от ЗТУ </h2>
+	<div>
+		<div>
+			<p><input type="text" class="input" id="iATSLoad" value="1015"> - i-я нагрузка</p>
+		</div>
+		<div>
+			<p><input type="text" class="input" id="totalLoad" value="8120"> - нагрузка сети</p>
+		</div>
+		<button id="iATSPartTrigger">Рассчитать</button>
+		<hr>
+		<div>
+			<p>
+				<span>Доля нагрузки заданной АТС: </span>
+				<span id="iATSPart"></span>
+			</p>
+		</div>
+		<div>
+			<p>
+				<span>Процент нагрузки АТС: </span>
+				<span id="iATSPercent"></span>
+				<span> %</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
