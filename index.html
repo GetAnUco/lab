@@ -10,41 +10,54 @@
 <div>
 	<h2>Расчет возникающих нагрузок всех станций ГСС</h2>
 	<div>
-		<h3>Квартирный сектор:</h3>
-		<div>
-			<p><input type="text" class="input" id="kvN" value="1400"> - число абонентов</p>
-		</div>
-		<div>
-			<p><input type="text" class="input" id="kvL" value="0.03"> - нагрузка (Эрл.)</p>
-		</div>
-
-		<h3>Народно-хозяйственный сектор (спальный район):</h3>
-		<div>
-			<p><input type="text" class="input" id="nhSN" value="2600"> - число абонентов</p>
-		</div>
-		<div>
-			<p><input type="text" class="input" id="nhSL" value="0.03"> - нагрузка (Эрл.)</p>
-		</div>
-
-		<h3>Народно-хозяйственный сектор (деловой район):</h3>
-		<div>
-			<p><input type="text" class="input" id="nhDN" value="3500"> - число абонентов</p>
-		</div>
-		<div>
-			<p><input type="text" class="input" id="nhDL" value="0.07"> - нагрузка (Эрл.)</p>
-		</div>
-
-		<h3>Специальная линия:</h3>
-		<div>
-			<p><input type="text" class="input" id="isdnN" value="2600"> - число абонентов</p>
-		</div>
-		<div>
-			<p><input type="text" class="input" id="isdnL" value="0.25"> - нагрузка (Эрл.)</p>
+		<div id="atsList">
+			<div class="ats">
+				<h4>Квартирный сектор:</h4>
+				<div>
+					<p><input type="text" class="input kvN" value="1400"> - число абонентов</p>
+				</div>
+				<div>
+					<p><input type="text" class="input kvL" value="0.03"> - нагрузка (Эрл.)</p>
+				</div>
+		
+				<h4>Народно-хозяйственный сектор (спальный район):</h4>
+				<div>
+					<p><input type="text" class="input nhSN" value="2600"> - число абонентов</p>
+				</div>
+				<div>
+					<p><input type="text" class="input nhSL" value="0.03"> - нагрузка (Эрл.)</p>
+				</div>
+		
+				<h4>Народно-хозяйственный сектор (деловой район):</h4>
+				<div>
+					<p><input type="text" class="input nhDN" value="3500"> - число абонентов</p>
+				</div>
+				<div>
+					<p><input type="text" class="input nhDL" value="0.07"> - нагрузка (Эрл.)</p>
+				</div>
+		
+				<h4>Специальная линия:</h4>
+				<div>
+					<p><input type="text" class="input isdnN" value="2600"> - число абонентов</p>
+				</div>
+				<div>
+					<p><input type="text" class="input isdnL" value="0.25"> - нагрузка (Эрл.)</p>
+				</div>	
+				<div>
+					<p>
+						<span><b>Нагрузка АТС: </b></span>
+						<span class="currentAtsLoad"></span>
+						<span> Эрл.</span>
+					</p>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<div>
-			<p><input type="text" class="input" id="stationN" value="8"> - число станций на сети</p>
+			<p><input type="text" class="input" id="stationN" value="1" readonly="readonly"> - число станций на сети</p>
 		</div>
+		<p><button id="addAts">Добавить АТС</button></p>
+		<p><button id="removeAts">Удалить АТС</button></p>
 		<button id="localNetworkLoadTrigger">Рассчитать</button>
 		<div>
 			<p>
